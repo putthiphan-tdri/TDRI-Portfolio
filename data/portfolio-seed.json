@@ -1,0 +1,307 @@
+{
+  "profile": {
+    "name": "Dr. Putthiphan Hirunyatrakul",
+    "title": "Big Data Research Fellow",
+    "bio": "Add a short bio about yourself, your research interests and expertise. This will appear on your TDRI portfolio.",
+    "email": "putthiphan@tdri.or.th",
+    "website": "https://www.tdri.or.th",
+    "photo": ""
+  },
+  "organization": {
+    "title": "About TDRI",
+    "description": "Thailand Development Research Institute (TDRI) is an independent think tank focusing on evidence-based policy research to drive sustainable development and improve the quality of life for all."
+  },
+  "achievementsIntro": "",
+  "quote": "TDRI envisions a prosperous Thailand driven by high-quality research and effective policy recommendations.",
+  "categories": [
+    {
+      "id": "research-projects",
+      "type": "projects",
+      "title": "Research Project",
+      "count": 4,
+      "accent": "#1f65b5",
+      "icon": "briefcase",
+      "items": [
+        {
+          "id": "project-llm-phase-2",
+          "title": "โครงการพัฒนาระบบวิเคราะห์ข้อมูลด้วย Large Language Models (LLMs) เพื่อการใช้ประโยชน์ในการพัฒนากำลังคนสมรรถนะสูงให้ตรงความต้องการของประเทศจากแพลตฟอร์มข้อมูลประกาศรับสมัครงานออนไลน์ ระยะที่ 2",
+          "source": "หน่วยบริหารและจัดการทุนด้านการพัฒนากำลังคน และทุนด้านการพัฒนาสถาบันอุดมศึกษา การวิจัยและการสร้างนวัตกรรม (บพค.)",
+          "startDate": "May 2026",
+          "endDate": "May 2027",
+          "status": "ongoing",
+          "link": ""
+        },
+        {
+          "id": "project-hospital-accreditation",
+          "title": "โครงการข้อเสนอเชิงนโยบายเพื่อการพัฒนาระบบการรับรองคุณภาพสถานพยาบาลของประเทศไทย",
+          "source": "สถาบันวิจัยระบบสาธารณสุข",
+          "startDate": "Dec 2025",
+          "endDate": "Dec 2026",
+          "status": "ongoing",
+          "link": ""
+        },
+        {
+          "id": "project-llm-phase-1",
+          "title": "โครงการพัฒนาระบบวิเคราะห์ข้อมูลด้วย Large Language Models (LLMs) เพื่อการใช้ประโยชน์ในการพัฒนากำลังคนสมรรถนะสูงให้ตรงความต้องการของประเทศจากแพลตฟอร์มข้อมูลประกาศรับสมัครงานออนไลน์ ระยะที่ 1",
+          "source": "หน่วยบริหารและจัดการทุนด้านการพัฒนากำลังคน และทุนด้านการพัฒนาสถาบันอุดมศึกษา การวิจัยและการสร้างนวัตกรรม (บพค.)",
+          "startDate": "Jun 2024",
+          "endDate": "Aug 2025",
+          "status": "done",
+          "link": ""
+        },
+        {
+          "id": "project-digital-labor-skills",
+          "title": "โครงการศึกษาตลาดแรงงานและข้อเสนอเชิงนโยบายด้านทักษะสำหรับเศรษฐกิจดิจิทัล",
+          "source": "Thailand Development Research Institute (TDRI)",
+          "startDate": "Jan 2024",
+          "endDate": "Dec 2024",
+          "status": "done",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "title": "Report",
+      "count": 0,
+      "accent": "#4f7fb8",
+      "icon": "report",
+      "items": []
+    },
+    {
+      "id": "publications",
+      "title": "Academic Journal",
+      "count": 2,
+      "accent": "#2d75c7",
+      "icon": "book",
+      "items": [
+        {
+          "id": "pub-hybrid-intersection",
+          "title": "Hybrid Intersection: Navigating Context and Constraint in AI for Social Good Among Thailand’s Smallholder Farmers.",
+          "source": "Sustainability",
+          "date": "Jun 2025",
+          "link": ""
+        },
+        {
+          "id": "pub-lockdown-costs",
+          "title": "The costs of lockdown: Assessing the employment and livelihood impacts of lockdown in Thailand during the COVID-19 pandemic.",
+          "source": "TDRI Quarterly Review",
+          "date": "Mar 2020",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "articles",
+      "title": "Article",
+      "count": 3,
+      "accent": "#16aa82",
+      "icon": "article",
+      "items": [
+        {
+          "id": "art-party-finance-policy",
+          "title": "ข้อสังเกต “ต้นทุนทางการเงินและที่มาของเงินจากนโยบายหาเสียงของพรรคการเมือง”",
+          "source": "TDRI",
+          "date": "Feb 2026",
+          "link": ""
+        },
+        {
+          "id": "art-policy-needed-new-government",
+          "title": "นโยบายที่ประเทศต้องการ และรัฐบาลใหม่ควรทำ",
+          "source": "TDRI",
+          "date": "Jan 2026",
+          "link": ""
+        },
+        {
+          "id": "art-ai-labor-market-growth",
+          "title": "ตลาดแรงงานเอไอมาแรง ที่ดีอาร์ไอพบ 2 ตำแหน่งงานโตอย่างก้าวกระโดด",
+          "source": "TDRI",
+          "date": "Aug 2025",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "conferences",
+      "title": "Conference",
+      "count": 0,
+      "accent": "#7157cf",
+      "icon": "podium",
+      "items": []
+    },
+    {
+      "id": "media",
+      "title": "Media",
+      "count": 0,
+      "accent": "#ef665f",
+      "icon": "media",
+      "items": []
+    },
+    {
+      "id": "workshops",
+      "title": "Workshop",
+      "count": 0,
+      "accent": "#d98b35",
+      "icon": "workshop",
+      "items": []
+    }
+  ],
+  "achievementSort": "latest",
+  "skillProfile": {
+    "title": "Skill Profile",
+    "description": "Skills, tools, and certifications that support my research and professional work.",
+    "domainSort": "count-desc",
+    "certificateSort": "latest",
+    "domains": [
+      {
+        "id": "skill-domain-generative-ai",
+        "title": "Generative AI",
+        "items": [
+          {
+            "id": "skill-chatgpt",
+            "name": "ChatGPT",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-gemini",
+            "name": "Gemini",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-claude",
+            "name": "Claude",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-notebooklm",
+            "name": "NotebookLM",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-perplexity",
+            "name": "Perplexity",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-skill-md",
+            "name": "Creating SKILL.md",
+            "type": "Technical",
+            "level": "Working"
+          },
+          {
+            "id": "skill-connectors",
+            "name": "Installing Connectors",
+            "type": "Technical",
+            "level": "Working"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-data-analysis",
+        "title": "Data Analysis",
+        "items": [
+          {
+            "id": "skill-excel",
+            "name": "Excel",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-spss",
+            "name": "SPSS",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-powerbi",
+            "name": "PowerBI",
+            "type": "Platform",
+            "level": "Familiar"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-ai-research",
+        "title": "AI Research",
+        "items": [
+          {
+            "id": "skill-deep-research",
+            "name": "Deep Research",
+            "type": "Method",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-ai-governance-domain",
+            "name": "AI Governance",
+            "type": "Domain",
+            "level": "Working"
+          },
+          {
+            "id": "skill-scispace",
+            "name": "SciSpace",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-consensus",
+            "name": "Consensus AI",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-connectedpapers",
+            "name": "ConnectedPapers",
+            "type": "Platform",
+            "level": "Working"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-vibe-coding",
+        "title": "Vibe Coding",
+        "items": [
+          {
+            "id": "skill-codex",
+            "name": "Codex",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-replit",
+            "name": "Replit",
+            "type": "Platform",
+            "level": "Working"
+          }
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-good-clinical-practice",
+        "title": "แนวทางการปฏิบัติการวิจัยทางคลินิกที่ดี (ICH-GCP:E6(R2))",
+        "issuer": "คณะกรรมการจริยธรรมการวิจัยในคน มหาวิทยาลัยธรรมศาสตร์ สาขาแพทยศาสตร์",
+        "date": "Aug 2025",
+        "link": ""
+      },
+      {
+        "id": "cert-future-proof-ai",
+        "title": "Future Proof with AI",
+        "issuer": "D^3 Harvard Business School",
+        "date": "May 2025",
+        "link": ""
+      },
+      {
+        "id": "cert-ai-governance",
+        "title": "AI Governance Training",
+        "issuer": "AI, Tech & Privacy",
+        "date": "Oct 2024",
+        "link": ""
+      }
+    ]
+  }
+}
