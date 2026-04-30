@@ -2272,6 +2272,7 @@ function getOverviewStats() {
   const allItems = data.categories.flatMap((category) =>
     category.items.map((item) => ({ category, item }))
   );
+  const nonProjectItems = allItems.filter(({ category }) => category.type !== 'projects');
   const projectCategory = data.categories.find((category) => category.type === 'projects');
   const projectItems = projectCategory?.items || [];
   const years = allItems.map(({ item }) => yearForItem(item)).filter(Boolean);
@@ -2285,7 +2286,7 @@ function getOverviewStats() {
   );
 
   return {
-    total: allItems.length,
+    total: nonProjectItems.length,
     categoryCount: data.categories.length,
     projects: projectItems.length,
     yearCount: uniqueYears.length,
