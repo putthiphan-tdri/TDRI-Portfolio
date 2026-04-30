@@ -10,7 +10,7 @@ Double-click `START HERE - TDRI Portfolio.command` in this folder.
 
 That file starts a local server from this exact folder and opens the portfolio in your browser. Keep the Terminal window open while using the app. If the usual port is busy, it automatically chooses the next available port.
 
-The app uses a dedicated browser storage key, `tdri-researcher-portfolio-canonical-v2`, so older experimental localhost sessions do not hide restored portfolio sections.
+The app uses a dedicated browser storage key, `tdri-researcher-portfolio-canonical-v3`, so older experimental localhost sessions do not hide restored portfolio sections.
 
 ## Source of truth
 
