@@ -1,0 +1,20 @@
+TDRI Portfolio App
+
+This is the main folder for your portfolio app:
+/Users/putthiphanhirunyatrakul/Documents/New project/TDRI Portfolio App
+
+How to open the portfolio:
+1. Double-click "START HERE - TDRI Portfolio.command".
+2. A Terminal window will open.
+3. Your browser will open the portfolio automatically.
+4. Keep the Terminal window open while using the portfolio.
+5. Close the Terminal window when finished.
+
+Important:
+- Do not open random localhost ports from old sessions.
+- Use this folder and this start file as your reliable access point.
+- If port 4177 is busy, the start file will automatically use the next available port.
+- Your edits are saved in the browser you use to edit the portfolio.
+
+GitHub repo:
+https://github.com/putthiphan-tdri/TDRI-Portfolio
