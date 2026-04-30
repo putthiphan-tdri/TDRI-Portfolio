@@ -1401,13 +1401,9 @@ function renderSelectedEditorItems(category) {
 }
 
 function renderProjectEditorGroups(category) {
-  const ongoingItems = category.items.filter((item) => item.status !== 'done');
-  const doneItems = category.items.filter((item) => item.status === 'done');
-
   return `
-    <div class="project-editor-groups">
-      ${renderProjectEditorGroup(category.id, 'On-going', 'ongoing', ongoingItems)}
-      ${renderProjectEditorGroup(category.id, 'Done', 'done', doneItems)}
+    <div class="category-list">
+      ${category.items.map((item) => renderProjectEditorItem(category.id, item)).join('')}
     </div>
   `;
 }
@@ -1664,13 +1660,6 @@ function renderProjectEditorItem(categoryId, item) {
           <input value="${escapeHtml(item.endDate || '')}" data-item-input="${categoryId}.${item.id}.endDate">
         </label>
       </div>
-      <label>
-        <span>Status</span>
-        <select data-item-input="${categoryId}.${item.id}.status">
-          <option value="ongoing" ${item.status !== 'done' ? 'selected' : ''}>On-going</option>
-          <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
-        </select>
-      </label>
       <label>
         <span>Link</span>
         <input type="url" placeholder="https://www.tdri.or.th/..." value="${escapeHtml(item.link || '')}" data-item-input="${categoryId}.${item.id}.link">
