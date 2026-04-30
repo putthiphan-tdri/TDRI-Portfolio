@@ -1,7 +1,6 @@
 TDRI Portfolio App
 
-This is the main folder for your portfolio app:
-/Users/putthiphanhirunyatrakul/Documents/New project/TDRI Portfolio App
+This is the main folder for your portfolio app.
 
 How to open the portfolio:
 1. Double-click "START HERE - TDRI Portfolio.command".
@@ -18,3 +17,6 @@ Important:
 
 GitHub repo:
 https://github.com/putthiphan-tdri/TDRI-Portfolio
+
+Public sharing:
+After the GitHub repo is public and GitHub Pages is enabled, share the GitHub Pages website link with colleagues.

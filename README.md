@@ -2,7 +2,7 @@
 
 This folder contains the separate TDRI portfolio app so it does not share files with the subscription management app.
 
-Canonical working copy: `/Users/putthiphanhirunyatrakul/Documents/New project/TDRI Portfolio App`
+Canonical working copy: this folder.
 
 ## Reliable Access
 
@@ -11,6 +11,10 @@ Double-click `START HERE - TDRI Portfolio.command` in this folder.
 That file starts a local server from this exact folder and opens the portfolio in your browser. Keep the Terminal window open while using the app. If the usual port is busy, it automatically chooses the next available port.
 
 The app uses a dedicated browser storage key, `tdri-researcher-portfolio-canonical-v3`, so older experimental localhost sessions do not hide restored portfolio sections.
+
+## Sharing
+
+The GitHub repository can be shared with colleagues after it is made public and GitHub Pages is enabled from the repository settings. The public site will use the files in this folder as its starter version, while private edits in your browser stay on that browser until you intentionally export and update the project files.
 
 ## Source of truth
 
