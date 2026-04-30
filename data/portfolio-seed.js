@@ -1,0 +1,460 @@
+window.TDRI_PORTFOLIO_SEED = {
+  "profile": {
+    "name": "Dr. Putthiphan Hirunyatrakul",
+    "title": "Big Data Research Fellow",
+    "bio": "",
+    "email": "putthiphan@tdri.or.th",
+    "website": "https://www.tdri.or.th",
+    "photo": ""
+  },
+  "organization": {
+    "title": "About TDRI",
+    "description": "Thailand Development Research Institute (TDRI) is an independent think tank focusing on evidence-based policy research to drive sustainable development and improve the quality of life for all."
+  },
+  "achievementsIntro": "",
+  "quote": "TDRI envisions a prosperous Thailand driven by high-quality research and effective policy recommendations.",
+  "categories": [
+    {
+      "id": "research-projects",
+      "type": "projects",
+      "title": "Research Project",
+      "count": 4,
+      "accent": "#1f65b5",
+      "icon": "briefcase",
+      "items": [
+        {
+          "id": "project-llm-phase-2",
+          "title": "โครงการพัฒนาระบบวิเคราะห์ข้อมูลด้วย Large Language Models (LLMs) เพื่อการใช้ประโยชน์ในการพัฒนากำลังคนสมรรถนะสูงให้ตรงความต้องการของประเทศจากแพลตฟอร์มข้อมูลประกาศรับสมัครงานออนไลน์ ระยะที่ 2",
+          "source": "หน่วยบริหารและจัดการทุนด้านการพัฒนากำลังคน และทุนด้านการพัฒนาสถาบันอุดมศึกษา การวิจัยและการสร้างนวัตกรรม (บพค.)",
+          "startDate": "May 2026",
+          "endDate": "May 2027",
+          "status": "ongoing",
+          "link": ""
+        },
+        {
+          "id": "project-hospital-accreditation",
+          "title": "โครงการข้อเสนอเชิงนโยบายเพื่อการพัฒนาระบบการรับรองคุณภาพสถานพยาบาลของประเทศไทย",
+          "source": "สถาบันวิจัยระบบสาธารณสุข",
+          "startDate": "Dec 2025",
+          "endDate": "Dec 2026",
+          "status": "ongoing",
+          "link": ""
+        },
+        {
+          "id": "project-llm-phase-1",
+          "title": "โครงการพัฒนาระบบวิเคราะห์ข้อมูลด้วย Large Language Models (LLMs) เพื่อการใช้ประโยชน์ในการพัฒนากำลังคนสมรรถนะสูงให้ตรงความต้องการของประเทศจากแพลตฟอร์มข้อมูลประกาศรับสมัครงานออนไลน์ ระยะที่ 1",
+          "source": "หน่วยบริหารและจัดการทุนด้านการพัฒนากำลังคน และทุนด้านการพัฒนาสถาบันอุดมศึกษา การวิจัยและการสร้างนวัตกรรม (บพค.)",
+          "startDate": "Jun 2024",
+          "endDate": "Aug 2025",
+          "status": "done",
+          "link": ""
+        },
+        {
+          "id": "project-digital-labor-skills",
+          "title": "โครงการการออกแบบระบบการประกันสังคมที่รองรับการเปลี่ยนแปลงของรูปแบบการทำงานในอนาคต",
+          "source": "กองยุทธศาสตร์การพัฒนาทรัพยากรมนุษย์และสังคม สำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ",
+          "startDate": "Apr 2020",
+          "endDate": "Apr 2021",
+          "status": "done",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "title": "Report",
+      "count": 2,
+      "accent": "#4f7fb8",
+      "icon": "report",
+      "items": [
+        {
+          "id": "item-1777483831130",
+          "title": "รายงานฉบับสมบูรณ์ (Final Report) โครงการการออกแบบ ระบบการประกันสังคมที่รองรับการเปลี่ยนแปลง ของรูปแบบการทำงานในอนาคต",
+          "source": "กองยุทธศาสตร์การพัฒนาทรัพยากรมนุษย์และสังคมสำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ",
+          "date": "July 2021",
+          "link": "https://tdri.or.th/2024/03/331057/"
+        },
+        {
+          "id": "item-1777483910849",
+          "title": "รายงานข้อเสนอแนะเชิงนโยบาย  โครงการพัฒนาระบบวิเคราะห์ข้อมูลด้วย Large Language Models (LLMs) เพื่อการใช้ประโยชน์ในการพัฒนากำลังคนสมรรถนะสูงฯ",
+          "source": "หน่วยบริหารและจัดการทุนด้านการพัฒนากำลังคน และทุนด้านการพัฒนาสถาบันอุดมศึกษา การวิจัยและการสร้างนวัตกรรม (บพค.)",
+          "date": "Dec 2025",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "publications",
+      "title": "Academic Journal",
+      "count": 2,
+      "accent": "#2d75c7",
+      "icon": "book",
+      "items": [
+        {
+          "id": "pub-hybrid-intersection",
+          "title": "Hybrid Intersection: Navigating Context and Constraint in AI for Social Good Among Thailand’s Smallholder Farmers.",
+          "source": "Sustainability",
+          "date": "Jun 2025",
+          "link": ""
+        },
+        {
+          "id": "pub-lockdown-costs",
+          "title": "The costs of lockdown: Assessing the employment and livelihood impacts of lockdown in Thailand during the COVID-19 pandemic.",
+          "source": "TDRI Quarterly Review",
+          "date": "Mar 2020",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "articles",
+      "title": "Article",
+      "count": 7,
+      "accent": "#16aa82",
+      "icon": "article",
+      "items": [
+        {
+          "id": "item-1777482840473",
+          "title": "ประสบการณ์ต่างประเทศของการระบาด และมาตรการคุมการระบาดไวรัสโควิด-19: 5 ข้อสังเกต 4 บทเรียน 3 ความสำเร็จ 2 จุดเปลี่ยน 1 เปิดเมือง",
+          "source": "TDRI",
+          "date": "Apr 2020",
+          "link": "https://tdri.or.th/2020/04/how-countries-worldwide-are-fighting-covid-19/"
+        },
+        {
+          "id": "item-1777482862138",
+          "title": "จากปิดเมืองสู่ฟื้นฟู: วิกฤตการว่างงาน แผลเป็นทางเศรษฐกิจ สู่การสร้างงานและศักยภาพแรงงานในระยะยาว",
+          "source": "TDRI",
+          "date": "Sep 2020",
+          "link": "https://tdri.or.th/2020/09/the-unemployment-impacts-of-covid-19/"
+        },
+        {
+          "id": "item-1777482881036",
+          "title": "ตั้งเข็มทิศใหม่กับแผน AI แห่งชาติฉบับสอง: 3 ความท้าทายใหญ่ที่ต้องก้าวเดิน",
+          "source": "TDRI",
+          "date": "Jun 2025",
+          "link": "https://tdri.or.th/2025/06/national-ai-actionplan-3challenges-ahead-article/"
+        },
+        {
+          "id": "item-1777482906502",
+          "title": "ตลาดแรงงานเอไอมาแรง ทีดีอาร์ไอพบ 2 ตำแหน่งงานโตอย่างก้าวกระโดด",
+          "source": "TDRI",
+          "date": "Aug 2025",
+          "link": "https://tdri.or.th/2025/08/ai-job-market-2tracked-growth/"
+        },
+        {
+          "id": "item-1777482934567",
+          "title": "นโยบายที่ประเทศต้องการ และรัฐบาลใหม่ควรทำ",
+          "source": "TDRI",
+          "date": "Jan 2026",
+          "link": "https://tdri.or.th/2026/01/key-policies-for-the-new-gov-article/"
+        },
+        {
+          "id": "item-1777482955718",
+          "title": "เมื่อ AI เขย่าตลาดงาน ใครอยู่ ใครไป",
+          "source": "TDRI",
+          "date": "Feb 2026",
+          "link": "https://tdri.or.th/2026/02/ai-job-market-disruption-and-impact/"
+        },
+        {
+          "id": "item-1777482980368",
+          "title": "ข้อสังเกต “ต้นทุนทางการเงินและที่มาของเงินจากนโยบายหาเสียงของพรรคการเมือง”",
+          "source": "TDRI",
+          "date": "Feb 2026",
+          "link": "https://tdri.or.th/2026/02/analysis-election-campaign-policies-2026/"
+        }
+      ]
+    },
+    {
+      "id": "conferences",
+      "title": "Conference",
+      "count": 3,
+      "accent": "#7157cf",
+      "icon": "podium",
+      "items": [
+        {
+          "id": "item-1777483390907",
+          "title": "นโยบายอุตสาหกรรมใหม่เพื่อสร้างการเติบโต",
+          "source": "TDRI Annual Conference 2025",
+          "date": "Nov 2025",
+          "link": "https://tdri.or.th/2025/12/ac-2025-session2/"
+        },
+        {
+          "id": "item-1777483433282",
+          "title": "Digital Technology Update: Agentic AI Hype or Real Productivity Leap",
+          "source": "TDRI EIS",
+          "date": "Mar 2026",
+          "link": ""
+        },
+        {
+          "id": "item-1777483454257",
+          "title": "Delta Special Briefing: Next-Generation Business Transformation with Generative AI",
+          "source": "TDRI EIS",
+          "date": "Apr 2026",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "title": "Media",
+      "count": 6,
+      "accent": "#ef665f",
+      "icon": "media",
+      "items": [
+        {
+          "id": "item-1777483474324",
+          "title": "พินิจเศรษฐกิจการเมือง : พลิกแผน AI ไทย วางหมากใหม่ให้ตรงเป้าอนาคต",
+          "source": "CU Radio",
+          "date": "Oct 2025",
+          "link": "https://tdri.or.th/2025/10/cu-radio-141025/"
+        },
+        {
+          "id": "item-1777483509814",
+          "title": "ยุทธศาสตร์ผลักดัน AI โจทย์ใหญ่ประเทศไทย | The Resources วิจัยใกล้ตัว",
+          "source": "ThaiPBS",
+          "date": "Oct 2025",
+          "link": "https://www.youtube.com/watch?v=z1XsOIMAt8U"
+        },
+        {
+          "id": "item-1777483532745",
+          "title": "ตลาดงาน AI ไทย จะเดินไปอย่างไรต่อ | The Resources วิจัยใกล้ตัว",
+          "source": "ThaiPBS",
+          "date": "Oct 2025",
+          "link": "https://www.youtube.com/watch?v=H_nBG2sG-u4"
+        },
+        {
+          "id": "item-1777483553270",
+          "title": "พินิจเศรษฐกิจการเมือง : ลงทุน data center อาจได้ไม่คุ้มเสีย",
+          "source": "CU Radio",
+          "date": "Nov 2025",
+          "link": "https://tdri.or.th/2025/11/cu-radio-251125/"
+        },
+        {
+          "id": "item-1777483582247",
+          "title": "\"อะไรจะการันตีว่า ฉันอัปสกิลไปแล้ว จะไม่ตกงาน\" ฟังเสียงแรงงานจูเนียร์ ในวันโดน AI แย่งงาน",
+          "source": "BBC Thai",
+          "date": "Jan 2026",
+          "link": "https://www.bbc.com/thai/articles/ce8rrm8p7vvo?at_format=image&at_campaign=Social_Flow&at_ptr_name=facebook_page&at_link_origin=BBC_news_Thai&at_medium=social&at_link_type=web_link&at_bbc_team=editorial&utm_sf_cserv_ref=1526071940947174&at_campaign_type=owned&at_link_id=F4665996-FC0C-11F0-A368-BDBBC2DDA2D1&utm_sf_post_ref=660658614"
+        },
+        {
+          "id": "item-1777483605857",
+          "title": "พินิจเศรษฐกิจการเมือง : เมื่อ AI เขย่าตลาดแรงงาน ใครจะถูก Disrupt",
+          "source": "CU Radio",
+          "date": "Feb 2026",
+          "link": "https://tdri.or.th/2026/02/cu-radio-240226/"
+        }
+      ]
+    },
+    {
+      "id": "workshops",
+      "title": "Workshop",
+      "count": 2,
+      "accent": "#d98b35",
+      "icon": "workshop",
+      "items": [
+        {
+          "id": "item-1777483668500",
+          "title": "Generative AI for Research",
+          "source": "TDRI",
+          "date": "May 2025",
+          "link": ""
+        },
+        {
+          "id": "item-1777483716682",
+          "title": "สาธิตการใช้งาน CoPilot Studio เพื่อพัฒนา AI Agent",
+          "source": "TDRI",
+          "date": "Oct 2025",
+          "link": ""
+        }
+      ]
+    }
+  ],
+  "achievementSort": "latest",
+  "skillProfile": {
+    "title": "Skill Profile",
+    "description": "Skills, tools, and certifications that support my research and professional work.",
+    "domainSort": "count-desc",
+    "certificateSort": "latest",
+    "domains": [
+      {
+        "id": "skill-domain-generative-ai",
+        "title": "Generative AI",
+        "items": [
+          {
+            "id": "skill-chatgpt",
+            "name": "ChatGPT",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-gemini",
+            "name": "Gemini",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-claude",
+            "name": "Claude",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-notebooklm",
+            "name": "NotebookLM",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-perplexity",
+            "name": "Perplexity",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-1777484401841",
+            "name": "Prompt Engineering",
+            "type": "Method",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-1777484439047",
+            "name": "Napkin.ai",
+            "type": "Platform",
+            "level": "Working"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-data-analysis",
+        "title": "Data Analysis",
+        "items": [
+          {
+            "id": "skill-excel",
+            "name": "Excel",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-spss",
+            "name": "SPSS",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-powerbi",
+            "name": "PowerBI",
+            "type": "Platform",
+            "level": "Familiar"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-ai-research",
+        "title": "Literature Review",
+        "items": [
+          {
+            "id": "skill-deep-research",
+            "name": "Deep Research",
+            "type": "Method",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-scispace",
+            "name": "SciSpace",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-consensus",
+            "name": "Consensus AI",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-connectedpapers",
+            "name": "ConnectedPapers",
+            "type": "Platform",
+            "level": "Working"
+          }
+        ]
+      },
+      {
+        "id": "skill-domain-1777484235473",
+        "title": "AI Agent",
+        "items": [
+          {
+            "id": "skill-1777484235473",
+            "name": "Copilot Studio",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-1777484247969",
+            "name": "Codex",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-1777484256067",
+            "name": "Connectors",
+            "type": "Technical",
+            "level": "Working"
+          },
+          {
+            "id": "skill-1777484273439",
+            "name": "SKILL.md",
+            "type": "Technical",
+            "level": "Working"
+          },
+          {
+            "id": "skill-1777484305522",
+            "name": "Claude Cowork",
+            "type": "Platform",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-1777484690946",
+            "name": "Replit",
+            "type": "Platform",
+            "level": "Working"
+          },
+          {
+            "id": "skill-1777484694806",
+            "name": "Perplexity Computer",
+            "type": "Platform",
+            "level": "Familiar"
+          },
+          {
+            "id": "skill-1777484862802",
+            "name": "Claude Design",
+            "type": "Platform",
+            "level": "Working"
+          }
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-good-clinical-practice",
+        "title": "แนวทางการปฏิบัติการวิจัยทางคลินิกที่ดี",
+        "issuer": "คณะกรรมการจริยธรรมการวิจัยในคน มหาวิทยาลัยธรรมศาสตร์ สาขาแพทยศาสตร์",
+        "date": "Aug 2025",
+        "link": ""
+      },
+      {
+        "id": "cert-future-proof-ai",
+        "title": "Future Proof with AI",
+        "issuer": "D^3 Harvard Business School",
+        "date": "May 2025",
+        "link": ""
+      },
+      {
+        "id": "cert-ai-governance",
+        "title": "AI Governance Training",
+        "issuer": "AI, Tech & Privacy",
+        "date": "Oct 2024",
+        "link": ""
+      }
+    ]
+  }
+};
