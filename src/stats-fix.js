@@ -2,6 +2,7 @@ function getOverviewStats() {
   const allItems = data.categories.flatMap((category) =>
     category.items.map((item) => ({ category, item }))
   );
+  const nonProjectCategories = data.categories.filter((category) => category.type !== 'projects');
   const nonProjectItems = allItems.filter(({ category }) => category.type !== 'projects');
   const projectCategory = data.categories.find((category) => category.type === 'projects');
   const projectItems = projectCategory?.items || [];
@@ -17,7 +18,7 @@ function getOverviewStats() {
 
   return {
     total: nonProjectItems.length,
-    categoryCount: data.categories.length,
+    categoryCount: nonProjectCategories.length,
     projects: projectItems.length,
     yearCount: uniqueYears.length,
     yearRange: uniqueYears.length
