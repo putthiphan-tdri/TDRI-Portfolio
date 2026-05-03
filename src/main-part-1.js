@@ -734,6 +734,7 @@ function icon(type) {
     plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
     edit: '<path d="m4.7 15.8-.9 4.4 4.4-.9L18.9 8.6l-3.5-3.5L4.7 15.8Z"/><path d="m13.9 6.6 3.5 3.5"/>',
     download: '<path d="M12 4v10.2"/><path d="m8.2 10.7 3.8 3.8 3.8-3.8"/><path d="M5 19.5h14"/>',
+    import: '<path d="M12 20V9.8"/><path d="m8.2 13.3 3.8-3.8 3.8 3.8"/><path d="M5 4.5h14"/>',
     trash: '<path d="M5 7h14"/><path d="M9 7V4.8h6V7"/><path d="M7.2 7 8 20h8l.8-13"/><path d="M10.5 10.7v5.7"/><path d="M13.5 10.7v5.7"/>',
     user: '<circle cx="12" cy="8.2" r="3.2"/><path d="M5.8 19.2c.9-3.3 3-5 6.2-5s5.3 1.7 6.2 5"/>',
     building: '<path d="M5.5 20.5h13"/><path d="M7 20.5V9.8l5-5.8 5 5.8v10.7"/><path d="M10 20.5v-5h4v5"/><path d="M10.2 9.8v2.1"/><path d="M13.8 9.8v2.1"/>',

@@ -96,6 +96,9 @@ function renderHeader() {
         ${nav.map((item) => `<button class="${item === 'My Portfolio' ? 'active' : ''}" type="button">${item}</button>`).join('')}
       </nav>
       <div class="header-actions">
+        <button class="icon-button" type="button" data-action="import" aria-label="Import portfolio JSON" title="Import JSON">
+          ${icon('import')}
+        </button>
         <button class="icon-button" type="button" data-action="export" aria-label="Export portfolio JSON" title="Export JSON">
           ${icon('download')}
         </button>

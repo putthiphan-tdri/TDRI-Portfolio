@@ -50,6 +50,10 @@ function bindEvents() {
     });
   });
 
+  document.querySelectorAll('[data-action="import"]').forEach((button) => {
+    button.addEventListener('click', importData);
+  });
+
   document.querySelectorAll('[data-action="export"]').forEach((button) => {
     button.addEventListener('click', exportData);
   });
@@ -739,6 +743,34 @@ function compressProfilePhoto(file) {
     });
     reader.readAsDataURL(file);
   });
+}
+
+function importData() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json,application/json';
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const imported = JSON.parse(e.target.result);
+        if (!imported.profile || !Array.isArray(imported.categories)) {
+          alert('Invalid portfolio JSON file.');
+          return;
+        }
+        Object.keys(data).forEach((k) => delete data[k]);
+        Object.assign(data, imported);
+        saveData();
+        render();
+      } catch {
+        alert('Failed to read the file. Please check that it is a valid JSON file.');
+      }
+    };
+    reader.readAsText(file);
+  });
+  input.click();
 }
 
 function exportData() {
