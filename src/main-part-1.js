@@ -703,6 +703,17 @@ function saveData() {
   syncCategoryCounts();
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    // Sync to backend when deployed (not on localhost)
+    if (
+      window.location.hostname !== 'localhost' &&
+      window.location.hostname !== '127.0.0.1'
+    ) {
+      fetch('/api/portfolio', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }).catch(() => {});
+    }
     return true;
   } catch {
     window.alert('This change could not be saved in the browser. Try a smaller image or export a backup before continuing.');
