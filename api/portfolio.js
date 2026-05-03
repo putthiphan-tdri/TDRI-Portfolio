@@ -1,4 +1,4 @@
-import { put, list } from '@vercel/blob';
+import { put, list, del, head } from '@vercel/blob';
 
 const BLOB_PATHNAME = 'portfolio-data.json';
 
@@ -17,8 +17,10 @@ export default async function handler(req, res) {
       if (blobs.length === 0) {
         return res.status(404).json(null);
       }
-      const response = await fetch(blobs[0].url);
-      if (!response.ok) throw new Error('Failed to fetch blob');
+      // head() returns a signed downloadUrl that works for private stores
+      const meta = await head(blobs[0].url);
+      const response = await fetch(meta.downloadUrl);
+      if (!response.ok) throw new Error(`Blob fetch failed: ${response.status}`);
       const portfolioData = await response.json();
       res.setHeader('Cache-Control', 'no-store');
       return res.json(portfolioData);
@@ -31,8 +33,13 @@ export default async function handler(req, res) {
     try {
       const body =
         typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
+      // Remove previous blob before writing so we don't accumulate versions
+      const { blobs: existing } = await list({ prefix: BLOB_PATHNAME, limit: 1 });
+      if (existing.length > 0) {
+        await del(existing.map((b) => b.url));
+      }
       await put(BLOB_PATHNAME, body, {
-        access: 'public',
+        access: 'private',
         contentType: 'application/json',
         addRandomSuffix: false,
       });
