@@ -1,4 +1,4 @@
-import { put, list, del, head } from '@vercel/blob';
+import { put, del, get } from '@vercel/blob';
 
 const BLOB_PATHNAME = 'portfolio-data.json';
 
@@ -13,18 +13,16 @@ export default async function handler(req, res) {
 
   if (req.method === 'GET') {
     try {
-      const { blobs } = await list({ prefix: BLOB_PATHNAME, limit: 1 });
-      if (blobs.length === 0) {
+      const result = await get(BLOB_PATHNAME, { access: 'private' });
+      if (!result || result.statusCode !== 200) {
         return res.status(404).json(null);
       }
-      // head() returns a signed downloadUrl that works for private stores
-      const meta = await head(blobs[0].url);
-      const response = await fetch(meta.downloadUrl);
-      if (!response.ok) throw new Error(`Blob fetch failed: ${response.status}`);
-      const portfolioData = await response.json();
+      const text = await new Response(result.stream).text();
       res.setHeader('Cache-Control', 'no-store');
-      return res.json(portfolioData);
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      return res.end(text);
     } catch (err) {
+      if (err.name === 'BlobNotFoundError') return res.status(404).json(null);
       return res.status(500).json({ error: err.message });
     }
   }
@@ -33,11 +31,8 @@ export default async function handler(req, res) {
     try {
       const body =
         typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
-      // Remove previous blob before writing so we don't accumulate versions
-      const { blobs: existing } = await list({ prefix: BLOB_PATHNAME, limit: 1 });
-      if (existing.length > 0) {
-        await del(existing.map((b) => b.url));
-      }
+      // Delete old blob first so we don't accumulate versions
+      try { await del(BLOB_PATHNAME); } catch {}
       await put(BLOB_PATHNAME, body, {
         access: 'private',
         contentType: 'application/json',
