@@ -1,11 +1,11 @@
 import { put, del, get } from '@vercel/blob';
+import { requireOwner } from './auth-utils.js';
 
 const BLOB_PATHNAME = 'portfolio-data.json';
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Portfolio-Owner');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
@@ -28,6 +28,8 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'PUT') {
+    if (!requireOwner(req, res)) return;
+
     try {
       const body =
         typeof req.body === 'string' ? req.body : JSON.stringify(req.body);

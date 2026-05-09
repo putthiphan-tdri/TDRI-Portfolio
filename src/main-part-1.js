@@ -611,6 +611,14 @@ let modalCategoryId = null;
 let draftData = null;
 let hasUnsavedChanges = false;
 let pendingFocusSelector = '';
+const isLocalApp =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1' ||
+  window.location.protocol === 'file:';
+let ownerAuthenticated = isLocalApp;
+let authChecked = isLocalApp;
+let loginModalOpen = false;
+let loginError = '';
 
 const app = document.getElementById('app');
 
@@ -703,16 +711,24 @@ function saveData() {
   syncCategoryCounts();
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    // Sync to backend when deployed (not on localhost)
-    if (
-      window.location.hostname !== 'localhost' &&
-      window.location.hostname !== '127.0.0.1'
-    ) {
+    if (!isLocalApp && ownerAuthenticated) {
       fetch('/api/portfolio', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Portfolio-Owner': '1',
+        },
+        credentials: 'same-origin',
         body: JSON.stringify(data),
-      }).catch(() => {});
+      })
+        .then((response) => {
+          if (response.status === 401) {
+            ownerAuthenticated = false;
+            window.alert('Your owner session expired. Please log in again before saving more changes.');
+            render();
+          }
+        })
+        .catch(() => {});
     }
     return true;
   } catch {
@@ -777,4 +793,3 @@ function editable(value, field, tag = 'span', extraClass = '') {
 function canEditField(field) {
   return false;
 }
-

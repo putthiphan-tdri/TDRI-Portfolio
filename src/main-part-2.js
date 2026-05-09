@@ -1,8 +1,12 @@
 function render() {
   const categories = data.categories;
+  if (!ownerAuthenticated && editMode) {
+    discardDraft();
+    return;
+  }
 
   app.innerHTML = `
-    <div class="site-shell ${editMode ? 'is-editing' : ''}">
+    <div class="site-shell ${editMode ? 'is-editing' : ''} ${ownerAuthenticated ? 'is-owner' : 'is-visitor'}">
       ${renderHeader()}
       <main class="portfolio-stage" id="portfolio">
         ${renderHero()}
@@ -13,6 +17,7 @@ function render() {
       ${renderFooter()}
       ${editMode ? renderEditor() : ''}
       ${modalCategoryId ? renderModal(modalCategoryId) : ''}
+      ${loginModalOpen ? renderLoginModal() : ''}
     </div>
   `;
 
@@ -39,6 +44,11 @@ function getEditorData() {
 }
 
 function beginEditing(scope = 'full', categoryId = selectedCategoryId) {
+  if (!ownerAuthenticated) {
+    openLoginModal();
+    return;
+  }
+
   if (!editMode || !draftData) {
     draftData = structuredClone(data);
     hasUnsavedChanges = false;
@@ -63,6 +73,11 @@ function markDraftDirty() {
 }
 
 function commitDraft() {
+  if (!ownerAuthenticated) {
+    openLoginModal();
+    return;
+  }
+
   if (!draftData) return;
 
   data = mergeData(defaultData, draftData);
@@ -88,14 +103,8 @@ function discardDraft({ requireConfirm = false } = {}) {
 
 function renderHeader() {
   const nav = ['Home', 'My Portfolio'];
-
-  return `
-    <header class="topbar">
-      ${tdriLogo()}
-      <nav class="main-nav" aria-label="Main navigation">
-        ${nav.map((item) => `<button class="${item === 'My Portfolio' ? 'active' : ''}" type="button">${item}</button>`).join('')}
-      </nav>
-      <div class="header-actions">
+  const ownerControls = ownerAuthenticated
+    ? `
         <button class="icon-button" type="button" data-action="import" aria-label="Import portfolio JSON" title="Import JSON">
           ${icon('import')}
         </button>
@@ -106,6 +115,23 @@ function renderHeader() {
           ${icon('edit')}
           <span>${editMode ? 'Preview' : 'Edit'}</span>
         </button>
+        ${isLocalApp ? '' : `<button class="owner-link-button" type="button" data-action="owner-logout">Log out</button>`}
+      `
+    : `
+        <button class="owner-link-button" type="button" data-action="owner-login">
+          ${icon('edit')}
+          <span>Owner login</span>
+        </button>
+      `;
+
+  return `
+    <header class="topbar">
+      ${tdriLogo()}
+      <nav class="main-nav" aria-label="Main navigation">
+        ${nav.map((item) => `<button class="${item === 'My Portfolio' ? 'active' : ''}" type="button">${item}</button>`).join('')}
+      </nav>
+      <div class="header-actions">
+        ${ownerControls}
         <button class="profile-button" type="button" aria-label="Profile">
           ${data.profile.photo ? `<img src="${data.profile.photo}" alt="">` : icon('user')}
         </button>
@@ -115,10 +141,13 @@ function renderHeader() {
 }
 
 function renderHero() {
+  const photoInput = ownerAuthenticated
+    ? '<input type="file" accept="image/png, image/jpeg, image/webp" data-action="photo-upload">'
+    : '';
   return `
     <section class="hero-grid" aria-label="Researcher introduction">
       <label class="photo-uploader ${data.profile.photo ? 'has-photo' : ''}">
-        <input type="file" accept="image/png, image/jpeg, image/webp" data-action="photo-upload">
+        ${photoInput}
         ${
           data.profile.photo
             ? `<img src="${data.profile.photo}" alt="Researcher portrait">`
@@ -271,6 +300,8 @@ function renderProjectCard(category, index) {
 }
 
 function renderSectionEditButton(category) {
+  if (!ownerAuthenticated) return '';
+
   const isActive = editMode && editorScope === 'section' && selectedCategoryId === category.id;
 
   return `
@@ -397,10 +428,14 @@ function renderSkillProfile() {
                 <button type="button" class="${profile.domainSort === 'count-asc' ? 'active' : ''}" data-action="sort-skill-domains" data-value="count-asc" aria-pressed="${profile.domainSort === 'count-asc'}">Fewest</button>
               </div>
             </div>
-            <button class="section-edit-button skill-card-edit ${editMode && editorScope === 'skills-core' ? 'active' : ''}" type="button" data-action="edit-skills-core" aria-label="Edit Skills">
-              ${icon('edit')}
-              <span>Edit</span>
-            </button>
+            ${
+              ownerAuthenticated
+                ? `<button class="section-edit-button skill-card-edit ${editMode && editorScope === 'skills-core' ? 'active' : ''}" type="button" data-action="edit-skills-core" aria-label="Edit Skills">
+                    ${icon('edit')}
+                    <span>Edit</span>
+                  </button>`
+                : ''
+            }
           </header>
           <div class="skill-domain-list">
             ${sortedDomains.map((domain) => renderSkillDomain(domain)).join('')}
@@ -420,10 +455,14 @@ function renderSkillProfile() {
                 <button type="button" class="${profile.certificateSort === 'oldest' ? 'active' : ''}" data-action="sort-certificates" data-value="oldest" aria-pressed="${profile.certificateSort === 'oldest'}">Oldest</button>
               </div>
             </div>
-            <button class="section-edit-button skill-card-edit ${editMode && editorScope === 'skills-certifications' ? 'active' : ''}" type="button" data-action="edit-skills-certifications" aria-label="Edit Certifications">
-              ${icon('edit')}
-              <span>Edit</span>
-            </button>
+            ${
+              ownerAuthenticated
+                ? `<button class="section-edit-button skill-card-edit ${editMode && editorScope === 'skills-certifications' ? 'active' : ''}" type="button" data-action="edit-skills-certifications" aria-label="Edit Certifications">
+                    ${icon('edit')}
+                    <span>Edit</span>
+                  </button>`
+                : ''
+            }
           </header>
           <div class="certification-list">
             ${sortedCertifications.map((certificate) => renderCertification(certificate)).join('')}
@@ -431,6 +470,25 @@ function renderSkillProfile() {
         </article>
       </div>
     </section>
+  `;
+}
+
+function renderLoginModal() {
+  return `
+    <div class="owner-login-backdrop" role="presentation" data-action="close-owner-login">
+      <form class="owner-login-panel" data-action="owner-login-submit" role="dialog" aria-modal="true" aria-label="Owner login">
+        <button class="icon-button owner-login-close" type="button" data-action="close-owner-login" aria-label="Close owner login">×</button>
+        <span class="owner-login-kicker">Portfolio owner</span>
+        <h2>Unlock editing</h2>
+        <p>Visitors can view this portfolio. Editing is available only after owner login.</p>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" required autofocus>
+        </label>
+        ${loginError ? `<small class="owner-login-error">${escapeHtml(loginError)}</small>` : ''}
+        <button class="primary-button" type="submit">Log in</button>
+      </form>
+    </div>
   `;
 }
 
@@ -479,4 +537,3 @@ function renderCertification(certificate) {
     </div>
   `;
 }
-

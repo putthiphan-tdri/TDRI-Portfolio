@@ -1,4 +1,100 @@
+async function initOwnerAuth() {
+  if (isLocalApp) return;
+
+  try {
+    const response = await fetch('/api/auth', {
+      cache: 'no-store',
+      credentials: 'same-origin',
+    });
+    if (!response.ok) return;
+    const status = await response.json();
+    ownerAuthenticated = Boolean(status.authenticated);
+    authChecked = true;
+    render();
+  } catch {
+    authChecked = true;
+  }
+}
+
+function openLoginModal() {
+  if (isLocalApp) return;
+  loginError = '';
+  loginModalOpen = true;
+  render();
+}
+
+function closeLoginModal() {
+  loginModalOpen = false;
+  loginError = '';
+  render();
+}
+
+async function submitOwnerLogin(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const password = new FormData(form).get('password');
+
+  try {
+    const response = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ password }),
+    });
+
+    if (!response.ok) {
+      const details = await response.json().catch(() => ({}));
+      loginError = details.error || 'Login failed';
+      render();
+      return;
+    }
+
+    ownerAuthenticated = true;
+    loginModalOpen = false;
+    loginError = '';
+    render();
+  } catch {
+    loginError = 'Login failed. Please try again.';
+    render();
+  }
+}
+
+async function logoutOwner() {
+  discardDraft();
+
+  try {
+    await fetch('/api/auth', {
+      method: 'DELETE',
+      credentials: 'same-origin',
+    });
+  } catch {}
+
+  ownerAuthenticated = false;
+  loginModalOpen = false;
+  render();
+}
+
 function bindEvents() {
+  document.querySelectorAll('[data-action="owner-login"]').forEach((button) => {
+    button.addEventListener('click', openLoginModal);
+  });
+
+  document.querySelectorAll('[data-action="owner-logout"]').forEach((button) => {
+    button.addEventListener('click', logoutOwner);
+  });
+
+  document.querySelectorAll('[data-action="owner-login-submit"]').forEach((form) => {
+    form.addEventListener('submit', submitOwnerLogin);
+  });
+
+  document.querySelectorAll('[data-action="close-owner-login"]').forEach((element) => {
+    element.addEventListener('click', (event) => {
+      if (event.currentTarget === event.target || event.currentTarget.classList.contains('owner-login-close')) {
+        closeLoginModal();
+      }
+    });
+  });
+
   document.querySelectorAll('[data-action="toggle-edit"]').forEach((button) => {
     button.addEventListener('click', () => {
       if (!editMode) {
@@ -784,3 +880,4 @@ function exportData() {
 }
 
 render();
+initOwnerAuth();
